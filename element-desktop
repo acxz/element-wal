@@ -1,0 +1,19 @@
+#!/bin/sh
+
+CONFIG=$HOME/.config/Element/config.json
+OLD_CONFIG=$HOME/.config/Element/config_old.json
+
+# copy old config
+cp $CONFIG $OLD_CONFIG
+
+# add the wal theme
+genelementconfig > $CONFIG
+
+PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/"
+
+# kill element if theme changed and start it to have it load the new configuration
+if [[ $(diff $CONFIG $OLD_CONFIG | wc -c) -ne 0 ]];
+    then ps -Ao pid= -o args= | awk '$4 ~ /element/ { print $1}' | xargs kill;
+fi
+
+element-desktop & > /dev/null 2>&1

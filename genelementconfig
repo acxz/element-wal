@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Generates element-desktop theme
+
+. $HOME/.cache/wal/colors.sh
+
+# Remove older Wal theme
+cat $HOME/.config/Element/config_old.json | jq \
+'del(.settingDefaults.custom_themes[] | select(.name == "Wal"))' | \
+
+# Add new Wal theme
+jq \
+'.settingDefaults.custom_themes += [{
+            "name": "Wal",
+            "is_dark": true,
+            "colors": {
+                "accent-color": "'"$foreground"'",
+                "secondary-content": "'"$foreground"'",
+                "tertiary-content": "'"$foreground"'",
+                "timeline-text-color": "'"$foreground"'",
+                "timeline-text-secondary-color": "'"$foreground"'",
+                "roomlist-text-color": "'"$foreground"'",
+                "sidebar-color": "'"$background"'",
+                "timeline-background-color": "'"$background"'",
+                "timeline-highlights-color": "'"$color1"'",
+                "roomlist-background-color": "'"$color1"'",
+                "warning-color": "'"$color1"'",
+                "roomlist-text-secondary-color": "'"$color9"'",
+                "primary-color": "'"$color4"'",
+                "reaction-row-button-selected-bg-color": "'"$color4"'",
+                "roomlist-separator-color": "'"$color5"'",
+                "roomlist-highlights-color": "'"$color8"'"
+            }
+}]'
