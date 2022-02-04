@@ -8,6 +8,8 @@ Heavily based on the methodology used in
 
 ## Installation
 
+The script depends on [`jq`](https://stedolan.github.io/jq/).
+
 To install, run `./install.sh`.
 Now, when you run `element-desktop` it will generate and load your pywal
 colorscheme. Make sure to go to `Settings -> Appearance -> Theme` and select `Wal`.
