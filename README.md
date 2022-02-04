@@ -10,7 +10,7 @@ Heavily based on the methodology used in
 
 To install, run `./install.sh`.
 Now, when you run `element-desktop` it will generate and load your pywal
-colorscheme.
+colorscheme. Make sure to go to `Settings -> Appearance -> Theme` and select `Wal`.
 
 ## Examples
 
