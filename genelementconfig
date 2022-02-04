@@ -4,8 +4,14 @@
 
 . $HOME/.cache/wal/colors.sh
 
-# Remove older Wal theme
+# Ensure that the Labs feature is on
 cat $HOME/.config/Element/config_old.json | jq \
+'del(.showLabsSettings)' | \
+jq \
+'. += {"showLabsSettings": true}' | \
+
+# Remove older Wal theme
+jq \
 'del(.settingDefaults.custom_themes[] | select(.name == "Wal"))' | \
 
 # Add new Wal theme
