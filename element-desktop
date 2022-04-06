@@ -10,7 +10,7 @@ PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bi
 
 # kill element if theme changed and start it to have it load the new configuration
 if [[ $(diff $CONFIG $PRE_WAL_CONFIG | wc -c) -ne 0 ]];
-    then ps -Ao pid= -o args= | awk '$4 ~ /element/ { print $1}' | xargs kill;
+    then ps -Ao pid= -o args= | awk '$5 ~ /element/ { print $1}' | xargs kill;
 fi
 
 2>/dev/null 1>&2 element-desktop &
