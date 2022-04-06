@@ -59,7 +59,7 @@ jq \
                 "focus-bg-color": "'"$color4"'",
                 "room-highlight-color": "'"$color4"'",
                 "other-user-pill-bg-color": "'"$color4"'",
-                "icon-button-color": "'"$color7"'",
+                "icon-button-color": "'"$color6"'",
                 "togglesw-off-color": "'"$color4"'",
                 "secondary-content": "'"$foreground"'",
                 "tertiary-content": "'"$foreground"'"
